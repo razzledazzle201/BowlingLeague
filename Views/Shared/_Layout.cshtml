@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BowlingLeague</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script>
+        window.onload = function () {
+            var context = new AudioContext();
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <picture>
+            <img src="images/hero1600.jpg" alt="bowling center">
+        </picture>
+        <div class="text-wrapper">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Welcome to the Bowling League Roster!</h1>
+            <br>
+            <br>
+            <br>
+            <div id="allthethings">
+
+                <div id="lines"></div>
+
+                <div id="allpins">
+
+                    <div id="pin1">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin2">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin3">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin4">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin5">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin6">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin7">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin8">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin9">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                    <div id="pin10">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+
+                </div>
+                <div id="lastball">
+                    <div id="dot1"></div>
+                    <div id="dot2"></div>
+                    <div id="dot3"></div>
+                    <div id="ball"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Party">Just for Fun</a></li>
+                </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+            <p>
+            &copy; 2021 - BowlingLeague
+        </p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

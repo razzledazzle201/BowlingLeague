@@ -1,0 +1,356 @@
+﻿/**************
+COLORS:
+#9f391d	- Rust
+#4a6f87	- Slate Blue
+#2b3b55	- Indigo
+#ac622a	- Camel Brown
+***************/
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Yantramanav', sans-serif;
+    color: #4a6f87;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Oxygen', sans-serif;
+    color: #9f391d;
+    font-size: 2rem;
+    text-shadow: -.2px -.2px 0 #fff, .2px -.2px 0 #fff, -.2px .2px 0 #fff, .2px .2px 0 #fff;
+}
+
+h3 {
+    font-family: 'Lustria', sans-serif;
+    color: #2b3b55;
+    text-shadow: -.2px -.2px 0 #000, .2px -.2px 0 #000, -.2px .2px 0 #000, .2px .2px 0 #000;
+}
+
+h4 {
+    font-family: 'Lustria', sans-serif;
+    color: #ac622a;
+}
+
+p {
+    font-family: 'Lustria', sans-serif;
+}
+
+/*****************
+Navigation stuff
+******************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transform: translateY(-600px);
+    transition: transform 500ms ease;
+}
+
+.open nav {
+    transform: translateY(0);
+}
+
+nav .close {
+    flex: 0 0 auto;
+}
+
+nav li:last-child {
+    border: none;
+}
+
+nav a {
+    color: #9f391d;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+}
+
+    nav ul li {
+        list-style: none;
+    }
+
+        nav ul li a {
+            color: #4a6f87;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20pt;
+            font-weight: bold;
+            letter-spacing: .25rem;
+            line-height: 1.5em;
+            transition: color ease-in-out 400ms;
+        }
+
+            nav ul li a:hover {
+                color: #9f391d;
+                transition: 350ms;
+            }
+
+
+
+/************
+Footer Stuff
+************/
+footer {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    border: 2px solid transparent;
+    color: #4a6f87;
+}
+
+/*************
+Media queries
+**************/
+
+/***   500   ***/
+@media (min-width: 500px) {
+    .card-wrapper {
+        max-width: 350px;
+        align-self: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 90vw;
+    }
+
+    .card + .card {
+        margin-top: 0;
+    }
+
+    .card {
+        max-width: 300px;
+    }
+}
+
+/***   700   ***/
+@media (min-width: 700px) {
+    .panel {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .left .card-wrapper:first-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .card-wrapper:last-of-type {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-wrapper {
+        align-self: flex-start;
+    }
+
+    article {
+        max-width: 90vw;
+    }
+
+        article * {
+            align-self: flex-start;
+        }
+
+        article:first-of-type {
+            margin-top: 0;
+        }
+
+    .left {
+        margin-right: 2.5rem;
+        order: -1;
+    }
+
+    .card-wrapper:not(.left) {
+        margin-top: 2rem;
+    }
+}
+/***   900   ***/
+@media (min-width: 900px) {
+    .overlay p {
+        display: block;
+    }
+
+    header svg {
+        display: none;
+    }
+
+    header {
+        order: 0;
+        align-self: center;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+        transition: none;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+        nav ul {
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            border: none;
+        }
+
+        nav ul li a {
+            font-size: 2rem;
+            margin: 0 2rem;
+            text-decoration: none;
+        }
+
+            nav ul li a:hover {
+                color: #9f391d;
+                transition: 350ms;
+            }
+
+            nav ul li a::after {
+                content: "";
+                position: relative;
+                display: block;
+                top: 2px;
+                z-index: 9;
+                height: 4px;
+                background: #fff;
+                transform: translateX(2px);
+                transform: scale(0, 1);
+                transition: transform ease-in-out 400ms;
+                transform-origin: 100% 0;
+            }
+
+            nav ul li a:hover::after {
+                transform: scale(1, 1);
+                transform-origin: 0 0;
+            }
+
+            nav ul li a.active,
+            nav ul li a.active:hover,
+            nav ul li a.active:hover::after {
+                color: #4a6f87;
+            }
+
+                nav ul li a.active:hover::after {
+                    transform: scale(0, 1);
+                }
+
+    article * {
+        align-self: flex-start;
+    }
+
+    article:first-of-type {
+        margin-top: 0;
+    }
+
+    .left {
+        margin-right: 2.5rem;
+        order: -1;
+    }
+
+    .card-wrapper {
+        align-self: flex-start;
+    }
+
+        .card-wrapper:not(.left) {
+            margin-top: 2rem;
+        }
+
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+/***   1050   ***/
+@media (min-width: 1050px) {
+    .overlay h1 {
+        max-width: max-content;
+    }
+}
+
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    width: 100%;
+    height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lobster Two', cursive;
+    color: #CA7183;
+}
+
+h1 {
+    color: #FC977B;
+    text-align: center;
+}
+
+body {
+    font-family: 'Cabin Condensed', sans-serif;
+    color: #585858;
+    position: relative;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: grab;
+    border-radius: 12px;
+    background-color: white;
+    color: white;
+    border: 2px solid #FC977B;
+}
+
+    input[type=button], input[type=submit], input[type=reset]:hover {
+        background-color: #FC977B;
+        color: white;
+    }
